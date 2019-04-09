@@ -1,0 +1,41 @@
+APPLICATION_ID: springmvc
+service_description:
+  name: helloworld
+  version: 0.0.5
+  properties:
+    allowCrossApp: false
+cse:
+  service:
+    registry:
+      address: https://cse.cn-north-1.myhuaweicloud.com
+      instance:
+        watch: false
+  config:
+    client:
+      serverUri: https://cse.cn-north-1.myhuaweicloud.com
+      refreshMode: 1
+      refresh_interval: 5000
+  monitor:
+    client:
+      serverUri: https://cse.cn-north-1.myhuaweicloud.com
+  rest:
+    address: 0.0.0.0:8088
+  #When a local project is deployed as a container outside a cluster, you need to delete all monitor and credentials comments and configure the AK/SK.
+  credentials:
+    accessKey: 2HZRKMQSMRYSL2U1HXK4
+    secretKey: tGbJUnfaQqihrhuplCNvgTURyBg5rGeSsalEcK7m
+    akskCustomCipher: default
+    #project: helloWorldProvider
+  #datasource config
+spring:
+  druid:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=utf-8
+    username: root
+    password: root123
+    MaxActive: 30
+    timeBetweenEvictionRunsMillis: 60000
+    maxWait: 10000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 5
+    validationQuery: SELECT 1
