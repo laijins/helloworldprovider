@@ -18,6 +18,8 @@ cse:
   monitor:
     client:
       serverUri: https://cse.cn-north-1.myhuaweicloud.com
+  references:
+
   rest:
     address: 0.0.0.0:8088
   #When a local project is deployed as a container outside a cluster, you need to delete all monitor and credentials comments and configure the AK/SK.
